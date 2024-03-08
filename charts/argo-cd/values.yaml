@@ -1,0 +1,10 @@
+argo-cd: # dependency in the Chart.yaml 
+  dex:
+    enabled: true
+  notifications:
+    enabled: false
+  applicationSet:
+    enabled: false
+  server:
+    extraArgs:
+      - --insecure
