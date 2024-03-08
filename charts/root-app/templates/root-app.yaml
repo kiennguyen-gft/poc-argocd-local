@@ -12,7 +12,7 @@ spec:
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: myargo-local
   syncPolicy:
     automated:
       selfHeal: true
