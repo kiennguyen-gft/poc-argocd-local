@@ -1,6 +1,4 @@
 argo-cd: # dependency in the Chart.yaml 
-  dex:
-    enabled: true
   notifications:
     enabled: true
   applicationSet:
@@ -9,19 +7,23 @@ argo-cd: # dependency in the Chart.yaml
     extraArgs:
       - --insecure
   # Dex config
-  config:
-    admin.enabled: "true"
-    dex.config: |-
-      logger:
-        level: debug
-      connectors:
-      - type: github
-        id: github
-        name: GitHub
-        config:
-          clientID: 5e4280f65aba9e013f44
-          clientSecret: $argo-dex-github-sso.github.clientSecret
-          loadAllGroups: true
-          orgs:
-          - name: gft-blx
-    url: http://localhost:8088
+  dex:
+    enabled: true
+
+  configs:
+    # Dex configuration
+    cm:
+      url: http://localhost:8088
+      admin.enabled: true
+      dex.config: |
+        connectors:
+          # GitHub example
+          - type: github
+            id: github
+            name: GitHub
+            config:
+              clientID: 5e4280f65aba9e013f44
+              clientSecret: $argo-dex-github-sso.github.clientSecret
+              orgs:
+              - name: gft-blx
+            
