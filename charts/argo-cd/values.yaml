@@ -15,7 +15,7 @@ argo-cd: # dependency in the Chart.yaml
     cm:
       url: http://localhost:8088
       admin.enabled: true
-      dex.config: |
+      dex.config: |-
         connectors:
           # GitHub example
           - type: github
