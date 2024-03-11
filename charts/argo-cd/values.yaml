@@ -22,8 +22,8 @@ argo-cd: # dependency in the Chart.yaml
             id: github
             name: GitHub
             config:
-              clientID: 5e4280f65aba9e013f44
-              clientSecret: $argo-dex-github-sso
+              clientID: $argo-dex-github-sso.github-oauth-client-id
+              clientSecret: $argo-dex-github-sso.github-oauth-client-secret
               orgs:
               - name: gft-blx
             
