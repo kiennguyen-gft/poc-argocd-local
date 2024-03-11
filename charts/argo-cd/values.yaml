@@ -2,7 +2,7 @@ argo-cd: # dependency in the Chart.yaml
   dex:
     enabled: true
   notifications:
-    enabled: false
+    enabled: true
   applicationSet:
     enabled: false
   server:
