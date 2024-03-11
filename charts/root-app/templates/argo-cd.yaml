@@ -15,4 +15,4 @@ spec:
     namespace: myargo-local
   syncPolicy:
     automated:
-      selfHeal: true
+      selfHeal: false
