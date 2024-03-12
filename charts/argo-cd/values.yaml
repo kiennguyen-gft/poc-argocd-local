@@ -9,21 +9,4 @@ argo-cd: # dependency in the Chart.yaml
   # Dex config
   dex:
     enabled: true
-
-  configs:
-    # Dex configuration
-    cm:
-      url: http://localhost:8088
-      admin.enabled: true
-      dex.config: |-
-        connectors:
-          # GitHub example
-          - type: github
-            id: github
-            name: GitHub
-            config:
-              clientID: $argo-dex-github-sso:githubOauthClientID
-              clientSecret: $argo-dex-github-sso:githubOauthClientSecret
-              orgs:
-              - name: gft-blx
             
